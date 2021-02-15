@@ -22,9 +22,7 @@ class Bob
         push()
         translate(pos.x, pos.y);
         fill("pink");
-       
-        ellipse(this.body.position.x, this.body.position.y, this.radius, this.radius);
-        
+        ellipse(0, 0, this.radius, this.radius);
         pop()
     }
 

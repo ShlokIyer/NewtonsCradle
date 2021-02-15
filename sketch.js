@@ -1,4 +1,4 @@
-
+const Constraint = Matter.Constraint;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -25,13 +25,9 @@ function setup() {
 	
 	
 	//Create a Ground
-	
-
-	
-
-
+	roofObject = new Roof(800, 50, 400, 20);
 	rope1=new Rope(bobObject1.body,roofObject.body,-bobDiameter*2, 0)
-
+	console.log(-bobDiameter*2)
 	rope2=new Rope(bobObject2.body,roofObject.body,-bobDiameter*1, 0)
 	rope3=new Rope(bobObject3.body,roofObject.body,0, 0)
 	rope4=new Rope(bobObject4.body,roofObject.body,bobDiameter*1, 0)
@@ -48,7 +44,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background("blue");
+  background("pink");
 
 	 roofObject.display();
 	 rope1.display()
@@ -66,11 +62,10 @@ function draw() {
   drawSprites();
  
 }
-//function keyPressed() {
-//	if (keyCode === UP_ARROW) {
-
-//	  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
-//	}
-//}
+function keyPressed() {
+	if (keyCode === UP_ARROW) {
+	  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
+	}
+}
 
 

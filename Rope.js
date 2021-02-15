@@ -15,17 +15,18 @@ class Rope{
     display(){
         var pointA = this.rope.bodyA.position;
 		var pointB = this.rope.bodyB.position;
-
+		push();
+		stroke("black")
         strokeWeight(4);
 
         var Anchor1X = pointA.x;
         var Anchor1Y = pointA.y;
 
-        var Anchor2X = pointB.x + this.offSetX;
-        var Anchor2Y = pointB.y + this.offSetY
+        var Anchor2X = pointB.x + this.offSetX; //s needs to be small
+        var Anchor2Y = pointB.y + this.offSetY; //s needs to be small
 
         line(Anchor1X, Anchor1Y, Anchor2X, Anchor2Y);
-
+		pop();
  }   
 
 
